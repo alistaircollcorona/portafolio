@@ -3,6 +3,62 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Alistair Pablo Coll Corona | Consultant Portfolio</title>
+    <meta name="description" content="Formal consulting portfolio of Alistair Pablo Coll Corona, showcasing projects, experience, skills, and contact information." />
+    <meta property="og:title" content="Alistair Pablo Coll Corona | Consultant Portfolio" />
+    <meta property="og:description" content="Industrial Engineer & Consultant focused on digital transformation, operations, and procurement." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://alistaircoll.example.com" />
+    <meta property="og:image" content="https://alistaircoll.example.com/assets/share-image.jpg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+    <style>
+        :root {
+            --font-heading: "Inter", "Segoe UI", sans-serif;
+            --font-body: "Merriweather", Georgia, serif;
+            --accent: #5d7c83;
+            --accent-strong: #345259;
+            --bg: #f5f5f2;
+            --surface: #ffffff;
+            --surface-muted: #eef0ed;
+            --text-primary: #1f2529;
+            --text-secondary: #4c565e;
+            --border: rgba(31, 37, 41, 0.12);
+            --shadow-soft: 0 18px 40px rgba(36, 47, 52, 0.12);
+            --transition: 220ms ease;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #101418;
+                --surface: #161c21;
+                --surface-muted: #1f252b;
+                --text-primary: #f4f6f8;
+                --text-secondary: #c6ccd2;
+                --border: rgba(196, 206, 213, 0.18);
+                --shadow-soft: 0 14px 30px rgba(0, 0, 0, 0.45);
+            }
+        }
+
+        body[data-theme="light"] {
+            --bg: #f5f5f2;
+            --surface: #ffffff;
+            --surface-muted: #eef0ed;
+            --text-primary: #1f2529;
+            --text-secondary: #4c565e;
+            --border: rgba(31, 37, 41, 0.12);
+            --shadow-soft: 0 18px 40px rgba(36, 47, 52, 0.12);
+        }
+
+        body[data-theme="dark"] {
+            --bg: #101418;
+            --surface: #161c21;
+            --surface-muted: #1f252b;
+            --text-primary: #f4f6f8;
+            --text-secondary: #c6ccd2;
+            --border: rgba(196, 206, 213, 0.18);
+            --shadow-soft: 0 14px 30px rgba(0, 0, 0, 0.45);
     <title>Alistair Coll | Professional Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,6 +79,17 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: var(--font-body);
+            background: var(--bg);
+            color: var(--text-primary);
+            line-height: 1.7;
+            letter-spacing: 0.01em;
         body {
             margin: 0;
             font-family: "Source Sans 3", "Segoe UI", sans-serif;
@@ -33,6 +100,69 @@
 
         a {
             color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .skip-link {
+            position: absolute;
+            top: -100px;
+            left: 1rem;
+            background: var(--accent);
+            color: #fff;
+            padding: 0.75rem 1.25rem;
+            border-radius: 0 0 0.75rem 0.75rem;
+            z-index: 10000;
+            text-decoration: none;
+        }
+
+        .skip-link:focus {
+            top: 1rem;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            background: rgba(245, 245, 242, 0.96);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        body[data-theme="dark"] header {
+            background: rgba(16, 20, 24, 0.9);
+        }
+
+        .nav-wrapper {
+            width: min(1200px, 92vw);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 1rem 0;
+        }
+
+        .brand {
+            font-family: var(--font-heading);
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            font-size: 0.95rem;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.85rem 1.35rem;
+            font-family: var(--font-heading);
+            font-size: 0.85rem;
             text-decoration: none;
         }
 
@@ -69,6 +199,194 @@
             letter-spacing: 0.08em;
         }
 
+        nav a {
+            position: relative;
+            padding-bottom: 0.4rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color var(--transition);
+        }
+
+        nav a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 2px;
+            width: 100%;
+            background: var(--accent);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform var(--transition);
+        }
+
+        nav a:focus,
+        nav a:hover {
+            color: var(--text-primary);
+        }
+
+        nav a:focus::after,
+        nav a:hover::after {
+            transform: scaleX(1);
+        }
+
+        .theme-toggle {
+            border: 1px solid var(--border);
+            background: var(--surface);
+            color: var(--text-primary);
+            border-radius: 999px;
+            padding: 0.55rem 1rem;
+            font-family: var(--font-heading);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            cursor: pointer;
+            transition: background var(--transition), color var(--transition), transform var(--transition);
+        }
+
+        .theme-toggle:focus,
+        .theme-toggle:hover {
+            background: var(--surface-muted);
+            transform: translateY(-1px);
+        }
+
+        main {
+            width: min(1200px, 92vw);
+            margin: 0 auto;
+        }
+
+        section {
+            padding: clamp(3rem, 6vw, 5rem) 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section-heading {
+            margin-bottom: 2.5rem;
+        }
+
+        .section-heading span {
+            font-family: var(--font-heading);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-size: 0.9rem;
+            color: var(--accent-strong);
+        }
+
+        .section-heading h2 {
+            font-family: var(--font-heading);
+            font-weight: 600;
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            margin: 0.6rem 0 0;
+        }
+
+        #home {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: clamp(2rem, 5vw, 4rem);
+            align-items: center;
+            padding-top: clamp(4rem, 8vw, 6rem);
+        }
+
+        .hero-intro h1 {
+            font-family: var(--font-heading);
+            font-size: clamp(2.5rem, 6vw, 3.5rem);
+            margin: 0 0 0.75rem;
+            letter-spacing: 0.02em;
+        }
+
+        .hero-intro p {
+            margin: 0 0 1.2rem;
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+        }
+
+        .hero-meta {
+            display: grid;
+            gap: 1rem;
+            font-family: var(--font-heading);
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.08em;
+            color: var(--text-secondary);
+        }
+
+        .hero-blurb {
+            padding: 1.5rem;
+            background: var(--surface);
+            border-radius: 1.25rem;
+            box-shadow: var(--shadow-soft);
+            border: 1px solid var(--border);
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .hero-blurb strong {
+            font-family: var(--font-heading);
+            letter-spacing: 0.02em;
+        }
+
+        .cta-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .btn-primary,
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+            padding: 0.9rem 1.6rem;
+            border-radius: 999px;
+            font-family: var(--font-heading);
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            text-decoration: none;
+            border: 1px solid transparent;
+            transition: transform var(--transition), box-shadow var(--transition), background var(--transition), color var(--transition);
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: #fdfdfd;
+            box-shadow: 0 14px 30px rgba(93, 124, 131, 0.35);
+        }
+
+        .btn-primary:hover,
+        .btn-primary:focus {
+            transform: translateY(-2px);
+            background: var(--accent-strong);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border-color: var(--accent);
+            color: var(--accent-strong);
+        }
+
+        .btn-secondary:hover,
+        .btn-secondary:focus {
+            background: var(--surface-muted);
+        }
+
+        .contact-quick {
+            display: grid;
+            gap: 0.75rem;
+        }
+
+        .contact-quick a {
+            color: var(--accent-strong);
+            font-family: var(--font-heading);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-size: 0.85rem;
+        }
+
+        .cards {
+            display: grid;
+            gap: 1.8rem;
         .nav-links a {
             color: rgba(255, 255, 255, 0.85);
             padding-bottom: 0.25rem;
@@ -218,6 +536,81 @@
 
         .card {
             background: var(--surface);
+            border-radius: 1.5rem;
+            padding: 1.8rem;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-soft);
+            display: grid;
+            gap: 1rem;
+        }
+
+        .card h3 {
+            font-family: var(--font-heading);
+            margin: 0;
+            font-size: 1.35rem;
+        }
+
+        .card p {
+            margin: 0;
+            color: var(--text-secondary);
+        }
+
+        .card ul {
+            margin: 0;
+            padding-left: 1.1rem;
+            color: var(--text-secondary);
+        }
+
+        .card ul li {
+            margin-bottom: 0.6rem;
+        }
+
+        .impact-note {
+            font-style: italic;
+            font-size: 0.95rem;
+            color: var(--accent-strong);
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 2.5rem;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 1rem;
+            width: 2px;
+            height: 100%;
+            background: var(--accent);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2.5rem;
+            padding-left: 1.5rem;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            top: 0.4rem;
+            left: -2.05rem;
+            width: 0.9rem;
+            height: 0.9rem;
+            background: var(--bg);
+            border: 3px solid var(--accent);
+            border-radius: 50%;
+        }
+
+        .timeline-item h3 {
+            margin: 0;
+            font-family: var(--font-heading);
             border-radius: 16px;
             padding: 2rem;
             border: 1px solid var(--border);
@@ -284,6 +677,416 @@
         }
 
         .timeline-meta {
+            font-family: var(--font-heading);
+            font-size: 0.85rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            margin: 0.4rem 0 1rem;
+        }
+
+        .timeline-item ul {
+            margin: 0;
+            padding-left: 1.15rem;
+        }
+
+        .stack-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.6rem;
+        }
+
+        .badge-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem;
+        }
+
+        .badge {
+            padding: 0.9rem 1.1rem;
+            background: var(--surface);
+            border-radius: 0.85rem;
+            border: 1px solid var(--border);
+            font-family: var(--font-heading);
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            text-align: center;
+        }
+
+        .leadership-list {
+            display: grid;
+            gap: 1.2rem;
+            color: var(--text-secondary);
+        }
+
+        .education-card {
+            display: grid;
+            gap: 0.75rem;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 1.25rem;
+            padding: 1.6rem;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            align-items: start;
+        }
+
+        form {
+            display: grid;
+            gap: 1rem;
+        }
+
+        label {
+            font-family: var(--font-heading);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            font-size: 0.8rem;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border-radius: 0.75rem;
+            border: 1px solid var(--border);
+            background: var(--surface);
+            font-family: var(--font-body);
+            font-size: 1rem;
+            color: var(--text-primary);
+            transition: border var(--transition), box-shadow var(--transition);
+        }
+
+        input:focus,
+        textarea:focus {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        textarea {
+            min-height: 160px;
+            resize: vertical;
+        }
+
+        .form-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .form-message {
+            font-family: var(--font-heading);
+            font-size: 0.9rem;
+            color: var(--accent-strong);
+        }
+
+        footer {
+            padding: 2.5rem 0 3rem;
+            text-align: center;
+            font-family: var(--font-heading);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-secondary);
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 700ms ease, transform 700ms ease;
+        }
+
+        .reveal.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 960px) {
+            nav ul {
+                justify-content: center;
+            }
+
+            .nav-wrapper {
+                grid-template-columns: 1fr;
+                justify-items: center;
+            }
+
+            .theme-toggle {
+                justify-self: center;
+            }
+        }
+
+        @media (max-width: 720px) {
+            nav ul {
+                gap: 0.65rem 1rem;
+            }
+
+            section {
+                padding: 2.75rem 0;
+            }
+
+            .timeline {
+                padding-left: 1.8rem;
+            }
+
+            .timeline::before {
+                left: 0.6rem;
+            }
+
+            .timeline-item::before {
+                left: -2.4rem;
+            }
+        }
+
+        @media print {
+            body {
+                background: #fff;
+                color: #000;
+                font-size: 12pt;
+            }
+
+            header,
+            .theme-toggle,
+            .btn-primary,
+            .btn-secondary,
+            .form-actions,
+            .form-message,
+            footer,
+            .skip-link {
+                display: none !important;
+            }
+
+            section {
+                padding: 1.5rem 0;
+                border: none;
+                page-break-inside: avoid;
+            }
+
+            .card,
+            .education-card,
+            .hero-blurb {
+                box-shadow: none;
+                border: 1px solid #ccc;
+            }
+
+            .timeline::before,
+            .timeline-item::before {
+                background: #000;
+                border-color: #000;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a class="skip-link" href="#home">Skip to main content</a>
+    <header>
+        <div class="nav-wrapper">
+            <div class="brand" aria-label="Site brand">Alistair Coll</div>
+            <nav aria-label="Primary">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#certifications">Certifications</a></li>
+                    <li><a href="#leadership">Leadership</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="assets/Alistair_Coll_CV.pdf" download>Download CV</a></li>
+                </ul>
+            </nav>
+            <button class="theme-toggle" type="button" id="themeToggle" aria-pressed="false" aria-label="Toggle color scheme">Light / Dark</button>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <section id="home" class="reveal" aria-labelledby="hero-heading">
+            <div class="hero-intro">
+                <p class="hero-meta">Consultant 1 · Efficio · City of London (Hybrid)</p>
+                <h1 id="hero-heading">Alistair Pablo Coll Corona (He/Him)</h1>
+                <p><strong>Industrial Engineer & Consultant</strong> — Digital Transformation, Operations & Procurement</p>
+                <p>I help organizations turn strategy into measurable impact through data-driven execution in procurement, operations, and digital transformation.</p>
+                <div class="cta-group">
+                    <a class="btn-primary" href="#contact">Contact</a>
+                    <a class="btn-secondary" href="assets/Alistair_Coll_CV.pdf" download>Download CV (PDF)</a>
+                </div>
+            </div>
+            <aside class="hero-blurb" aria-label="Professional details">
+                <div>
+                    <strong>Current Role</strong>
+                    <p>Consultant 1 · Efficio (Oct 2025 – Present)<br />City of London, UK · Hybrid</p>
+                </div>
+                <div>
+                    <strong>Primary Location</strong>
+                    <p>Mexico City, Mexico</p>
+                </div>
+                <div class="contact-quick" aria-label="Quick contact options">
+                    <strong>Connect</strong>
+                    <a href="mailto:alistaircollcorona@gmail.com">Email · alistaircollcorona@gmail.com</a>
+                    <a href="tel:+524427490704">Phone · +52 442 749 0704</a>
+                    <a href="https://www.linkedin.com/in/alistair-pablo-coll-corona-15361118b/" target="_blank" rel="noreferrer">LinkedIn Profile</a>
+                </div>
+                <p style="margin:0; font-size:0.85rem; color:var(--text-secondary);">Add your CV file at <code>assets/Alistair_Coll_CV.pdf</code> for downloads.</p>
+            </aside>
+        </section>
+
+        <section id="projects" class="reveal" aria-labelledby="projects-heading">
+            <div class="section-heading">
+                <span>Selected Engagements</span>
+                <h2 id="projects-heading">Projects & Outcomes</h2>
+            </div>
+            <div class="cards">
+                <article class="card" aria-labelledby="project-zone">
+                    <h3 id="project-zone">The Zone — Mental Health App for Student Athletes</h3>
+                    <p><strong>Role:</strong> Project Manager & Consultant | Budget ≈ 2.4M MXN/year</p>
+                    <ul>
+                        <li>Led cross-functional delivery across web, mobile, and analytics workstreams.</li>
+                        <li>Established UX, QA, and measurement cadences with internal and partner teams.</li>
+                        <li>Coordinated multi-stakeholder governance to secure U.S. market readiness.</li>
+                    </ul>
+                    <p class="impact-note">What I delivered: On-time launches, higher user engagement, and clearer operational visibility.</p>
+                </article>
+                <article class="card" aria-labelledby="project-gov">
+                    <h3 id="project-gov">Government-Backed Software Initiatives</h3>
+                    <p><strong>Focus:</strong> National and municipal platforms serving 100,000+ citizens</p>
+                    <ul>
+                        <li>Delivered reliable, accessible, and secure digital services for high-volume usage.</li>
+                        <li>Embedded usability testing and inclusive design standards throughout sprints.</li>
+                        <li>Stood up agile governance, ensuring cross-agency alignment and reporting.</li>
+                    </ul>
+                    <p class="impact-note">Impact: Faster service delivery and measurable public adoption.</p>
+                </article>
+                <article class="card" aria-labelledby="project-quality">
+                    <h3 id="project-quality">Quality & Delivery Excellence (ISO 9001 & CMMI Level 3)</h3>
+                    <p><strong>Scope:</strong> Enterprise delivery governance</p>
+                    <ul>
+                        <li>Standardized project processes and release criteria across delivery teams.</li>
+                        <li>Coached teams through audit readiness, documentation, and corrective actions.</li>
+                        <li>Instrumented dashboards for quality, throughput, and risk visibility.</li>
+                    </ul>
+                    <p class="impact-note">Impact: Improved timelines, quality, and delivery consistency.</p>
+                </article>
+                <article class="card" aria-labelledby="project-partnerships">
+                    <h3 id="project-partnerships">LATAM Partnerships — BeNeXT Global</h3>
+                    <p><strong>Role:</strong> LATAM Liaison Director</p>
+                    <ul>
+                        <li>Activated partnerships with NGOs, governments, and universities across LATAM.</li>
+                        <li>Designed leadership and innovation programs tailored to regional priorities.</li>
+                        <li>Coordinated cross-border execution, funding, and stakeholder reporting.</li>
+                    </ul>
+                    <p class="impact-note">Impact: Expanded regional footprint and sustained flagship initiatives.</p>
+                </article>
+                <article class="card" aria-labelledby="project-municipal">
+                    <h3 id="project-municipal">Municipal Finance Modernization (Notifier)</h3>
+                    <p><strong>Role:</strong> Consultant & Analyst</p>
+                    <ul>
+                        <li>Supported tax collection, budgeting, and financial reporting system upgrades.</li>
+                        <li>Introduced controls for compliance and audit-ready documentation.</li>
+                        <li>Built training aids to strengthen municipal adoption and retention.</li>
+                    </ul>
+                    <p class="impact-note">Impact: Improved fiscal insight and sustainable budgeting cadence.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="experience" class="reveal" aria-labelledby="experience-heading">
+            <div class="section-heading">
+                <span>Professional Journey</span>
+                <h2 id="experience-heading">Experience Timeline</h2>
+            </div>
+            <div class="timeline" aria-label="Career timeline">
+                <article class="timeline-item">
+                    <h3>Efficio</h3>
+                    <p class="timeline-meta">Consultant 1 · Oct 2025 – Present · City of London, UK (Hybrid)</p>
+                    <ul>
+                        <li>Partner with clients to identify efficiency opportunities and unlock cost optimisation.</li>
+                        <li>Lead analysis, stakeholder engagement, and change management for procurement transformations.</li>
+                        <li>Apply Efficio methodologies to strengthen supply chain and operational performance.</li>
+                    </ul>
+                </article>
+                <article class="timeline-item">
+                    <h3>BeNeXT Global</h3>
+                    <p class="timeline-meta">LATAM Liaison Director · Aug 2024 – Present · Washington, DC & Mexico City</p>
+                    <ul>
+                        <li>Build partnerships with NGOs, governments, and academic institutions across LATAM.</li>
+                        <li>Coordinate cross-border initiatives that advance leadership programmes and innovation.</li>
+                        <li>Support strategy, operations, and measurement for regional growth.</li>
+                    </ul>
+                </article>
+                <article class="timeline-item">
+                    <h3>Nextia</h3>
+                    <p class="timeline-meta">Project Manager & Consultant · May 2024 – Sep 2025 · Mexico City, MX</p>
+                    <ul>
+                        <li>Directed multi-platform delivery for The Zone and government software serving 100k+ users.</li>
+                        <li>Implemented delivery governance, cadence planning, and KPI dashboards.</li>
+                        <li>Guided cross-functional teams on data-driven decision-making and risk management.</li>
+                    </ul>
+                </article>
+                <article class="timeline-item">
+                    <h3>Nextia</h3>
+                    <p class="timeline-meta">Operations Analyst · May 2023 – May 2024 · Hybrid</p>
+                    <ul>
+                        <li>Laid the groundwork for ISO 9001 and CMMI Level 3 certification readiness.</li>
+                        <li>Standardised processes, templates, and reporting across operations teams.</li>
+                        <li>Automated KPI tracking to highlight delivery trends and improvement areas.</li>
+                    </ul>
+                </article>
+                <article class="timeline-item">
+                    <h3>Universidad Panamericana</h3>
+                    <p class="timeline-meta">Client Service & Logistics (Scholarship Programme) · Aug 2020 – Jun 2025 · Mexico City</p>
+                    <ul>
+                        <li>Managed student support queues and optimised HubSpot CRM data quality.</li>
+                        <li>Led logistics for academic events, workshops, and scholarship programmes.</li>
+                        <li>Improved reporting cadence for leadership and donors.</li>
+                    </ul>
+                </article>
+                <article class="timeline-item">
+                    <h3>Municipal Civic Center (Finance)</h3>
+                    <p class="timeline-meta">Notifier · May 2020 – Jul 2020 · Querétaro, MX</p>
+                    <ul>
+                        <li>Supported tax collection, budgeting, and financial record stewardship.</li>
+                        <li>Introduced reporting practices to enhance compliance and transparency.</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <section id="skills" class="reveal" aria-labelledby="skills-heading">
+            <div class="section-heading">
+                <span>Core Strengths</span>
+                <h2 id="skills-heading">Skills Matrix</h2>
+            </div>
+            <div class="stack-grid">
+                <div class="card" aria-labelledby="languages-heading">
+                    <h3 id="languages-heading">Languages</h3>
+                    <ul>
+                        <li>English — Native/Bilingual</li>
+                        <li>Spanish — Native</li>
+                        <li>French — Basic</li>
+                    </ul>
+                </div>
+                <div class="card" aria-labelledby="technical-heading">
+                    <h3 id="technical-heading">Technical</h3>
+                    <ul>
+                        <li>Python, R, SQL</li>
+                        <li>Advanced Excel & Power Query</li>
+                        <li>JIRA, HubSpot, Kajabi</li>
+                        <li>SolidWorks, C#, Google Workspace</li>
+                    </ul>
+                </div>
+                <div class="card" aria-labelledby="collab-heading">
+                    <h3 id="collab-heading">Collaboration & Tools</h3>
+                    <ul>
+                        <li>Microsoft Teams, Slack</li>
+                        <li>OpenProject, Linear</li>
+                        <li>Change management & stakeholder engagement</li>
+                        <li>Data storytelling & executive reporting</li>
+                    </ul>
             color: var(--text-secondary);
             margin-top: 0.35rem;
             font-weight: 600;
@@ -533,6 +1336,82 @@
             </div>
         </section>
 
+        <section id="certifications" class="reveal" aria-labelledby="cert-heading">
+            <div class="section-heading">
+                <span>Credentials</span>
+                <h2 id="cert-heading">Certifications & Learning</h2>
+            </div>
+            <div class="badge-grid" role="list">
+                <div class="badge" role="listitem">ISO 31000 (Risk)</div>
+                <div class="badge" role="listitem">ISO 19011 (Auditing)</div>
+                <div class="badge" role="listitem">ISO 9001 (Quality)</div>
+                <div class="badge" role="listitem">Scrum Fundamentals</div>
+                <div class="badge" role="listitem">SolidWorks Certified</div>
+                <div class="badge" role="listitem">Excel Associate</div>
+                <div class="badge" role="listitem">IPADE Business Management</div>
+                <div class="badge" role="listitem">HubSpot Content & Internal Marketing</div>
+                <div class="badge" role="listitem">PMP (in progress)</div>
+            </div>
+        </section>
+
+        <section id="leadership" class="reveal" aria-labelledby="leadership-heading">
+            <div class="section-heading">
+                <span>Leadership & Service</span>
+                <h2 id="leadership-heading">Giving Back</h2>
+            </div>
+            <div class="card">
+                <ul class="leadership-list">
+                    <li>Teach mathematics, English, and Spanish at La Barranca community school.</li>
+                    <li>Coordinated solar panel installation and community library programmes.</li>
+                    <li>Deliver piano lessons to underserved schools to encourage arts participation.</li>
+                    <li>Logistics support for Unidos and Warriors youth leadership initiatives.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="education" class="reveal" aria-labelledby="education-heading">
+            <div class="section-heading">
+                <span>Academic Foundation</span>
+                <h2 id="education-heading">Education</h2>
+            </div>
+            <div class="education-card" aria-labelledby="up-heading">
+                <h3 id="up-heading">Universidad Panamericana — Mexico City</h3>
+                <p>BSc Industrial Engineering · Minor in Innovation (2020 – 2024)</p>
+                <p>Specialty: Project Management for Engineering (2024 – 2025)</p>
+            </div>
+        </section>
+
+        <section id="contact" class="reveal" aria-labelledby="contact-heading">
+            <div class="section-heading">
+                <span>Connect</span>
+                <h2 id="contact-heading">Contact</h2>
+            </div>
+            <div class="contact-wrapper">
+                <form id="contactForm" novalidate>
+                    <div>
+                        <label for="name">Name</label>
+                        <input id="name" name="name" type="text" autocomplete="name" required />
+                    </div>
+                    <div>
+                        <label for="email">Email</label>
+                        <input id="email" name="email" type="email" autocomplete="email" required />
+                    </div>
+                    <div>
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn-primary">Send Message</button>
+                        <a class="btn-secondary" href="mailto:alistaircollcorona@gmail.com">Email Me</a>
+                        <a class="btn-secondary" href="https://www.linkedin.com/in/alistair-pablo-coll-corona-15361118b/" target="_blank" rel="noreferrer">Connect on LinkedIn</a>
+                        <span class="form-message" id="formMessage" role="status" aria-live="polite"></span>
+                    </div>
+                </form>
+                <div class="card" aria-label="Direct contact details">
+                    <h3>Direct Access</h3>
+                    <p><strong>Email:</strong> <a href="mailto:alistaircollcorona@gmail.com">alistaircollcorona@gmail.com</a></p>
+                    <p><strong>Phone:</strong> <a href="tel:+524427490704">+52 442 749 0704</a></p>
+                    <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/alistair-pablo-coll-corona-15361118b/" target="_blank" rel="noreferrer">linkedin.com/in/alistair-pablo-coll-corona-15361118b</a></p>
         <section id="expertise">
             <div class="container">
                 <p class="section-title">Core Capabilities</p>
@@ -637,6 +1516,118 @@
         </section>
     </main>
 
+    <footer>
+        <p>© <span id="year"></span> · Mexico City · All rights reserved</p>
+    </footer>
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Alistair Pablo Coll Corona",
+            "jobTitle": "Consultant 1",
+            "email": "mailto:alistaircollcorona@gmail.com",
+            "telephone": "+52-442-749-0704",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Mexico City",
+                "addressCountry": "MX"
+            },
+            "sameAs": [
+                "https://www.linkedin.com/in/alistair-pablo-coll-corona-15361118b/"
+            ]
+        }
+    </script>
+
+    <script>
+        const body = document.body;
+        const themeToggle = document.getElementById('themeToggle');
+        const storedTheme = localStorage.getItem('preferred-theme');
+
+        function applyTheme(theme) {
+            if (theme === 'dark') {
+                body.setAttribute('data-theme', 'dark');
+                themeToggle.setAttribute('aria-pressed', 'true');
+                themeToggle.textContent = 'Dark Mode';
+            } else if (theme === 'light') {
+                body.setAttribute('data-theme', 'light');
+                themeToggle.setAttribute('aria-pressed', 'false');
+                themeToggle.textContent = 'Light Mode';
+            } else {
+                body.removeAttribute('data-theme');
+                themeToggle.setAttribute('aria-pressed', 'false');
+                themeToggle.textContent = 'Auto Mode';
+            }
+        }
+
+        if (storedTheme) {
+            applyTheme(storedTheme);
+        } else {
+            applyTheme(null);
+        }
+
+        themeToggle.addEventListener('click', () => {
+            const current = body.getAttribute('data-theme');
+            let next;
+            if (current === 'dark') {
+                next = 'light';
+            } else if (current === 'light') {
+                next = null;
+            } else {
+                next = 'dark';
+            }
+
+            if (next) {
+                localStorage.setItem('preferred-theme', next);
+            } else {
+                localStorage.removeItem('preferred-theme');
+            }
+            applyTheme(next);
+        });
+
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.18,
+        });
+
+        document.querySelectorAll('.reveal').forEach((section) => {
+            observer.observe(section);
+        });
+
+        const form = document.getElementById('contactForm');
+        const formMessage = document.getElementById('formMessage');
+
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const name = form.name.value.trim();
+            const email = form.email.value.trim();
+            const message = form.message.value.trim();
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (!name || !email || !message) {
+                formMessage.textContent = 'Please complete all fields before sending.';
+                formMessage.style.color = '#b1403f';
+                return;
+            }
+
+            if (!emailRegex.test(email)) {
+                formMessage.textContent = 'Please enter a valid email address.';
+                formMessage.style.color = '#b1403f';
+                return;
+            }
+
+            formMessage.textContent = 'Thank you. Your message is ready to send.';
+            formMessage.style.color = 'var(--accent-strong)';
+            form.reset();
+        });
     <footer class="footer">
         <div class="container">
             &copy; <span id="year"></span> Alistair Pablo Coll Corona. All rights reserved.
