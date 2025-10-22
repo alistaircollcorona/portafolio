@@ -4,7 +4,7 @@ Formal single-page portfolio for **Alistair Pablo Coll Corona** built with HTML,
 
 ## Getting Started
 
-Open `index.html` directly in your browser to preview locally. To adjust copy or styling, edit the inline `<style>` or content blocks in the same file.
+Open `index.html` directly in your browser to preview locally. Update copy within the HTML as needed, adjust styling in `assets/styles.css`, and tweak behavior (theme toggle, scroll reveals, form validation) in `assets/main.js`.
 
 ### Assets
 
