@@ -19,3 +19,9 @@ Because the site is static, you can host it anywhere that serves plain files:
 - **Vercel** – import the repository, choose the “Other” framework preset, and set the output directory to `.`.
 
 After deploying, test the hosted URL in both light and dark themes, and confirm the contact links open your default mail and phone handlers.
+
+## Troubleshooting
+
+### Checks awaiting conflict resolution
+
+If GitHub shows a banner stating that "checks are waiting for conflict resolution" with actions for **Resolve conflicts**, the branch has diverged from the target branch and contains merge conflicts (commonly in `index.html` for this project). GitHub blocks automated checks, including header, redirect, and deploy previews, until the conflicts are fixed. Use the **Resolve conflicts** button or merge the latest `main` changes locally, resolve the conflict markers, and push the updated branch. Once the branch is conflict-free, the queued checks will run normally.
