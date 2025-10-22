@@ -59,6 +59,20 @@
             --text-secondary: #c6ccd2;
             --border: rgba(196, 206, 213, 0.18);
             --shadow-soft: 0 14px 30px rgba(0, 0, 0, 0.45);
+    <title>Alistair Coll | Professional Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --background: #f5f7fb;
+            --surface: #ffffff;
+            --text-primary: #1f2933;
+            --text-secondary: #52606d;
+            --accent: #12395b;
+            --accent-light: #c8d7e6;
+            --highlight: #dcbf6b;
+            --border: #e3e8ee;
         }
 
         *, *::before, *::after {
@@ -76,6 +90,12 @@
             color: var(--text-primary);
             line-height: 1.7;
             letter-spacing: 0.01em;
+        body {
+            margin: 0;
+            font-family: "Source Sans 3", "Segoe UI", sans-serif;
+            background-color: var(--background);
+            color: var(--text-primary);
+            line-height: 1.6;
         }
 
         a {
@@ -143,6 +163,38 @@
             gap: 0.85rem 1.35rem;
             font-family: var(--font-heading);
             font-size: 0.85rem;
+            text-decoration: none;
+        }
+
+        header {
+            background: linear-gradient(135deg, rgba(18, 57, 91, 0.92), rgba(18, 57, 91, 0.75)), url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1600&q=80') center/cover;
+            color: #fff;
+            padding: 3rem 0 5rem;
+        }
+
+        .container {
+            width: min(1100px, 92vw);
+            margin: 0 auto;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 3rem;
+        }
+
+        .brand {
+            font-family: "Merriweather", serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            letter-spacing: 0.04em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            font-size: 0.95rem;
             text-transform: uppercase;
             letter-spacing: 0.08em;
         }
@@ -335,6 +387,150 @@
         .cards {
             display: grid;
             gap: 1.8rem;
+        .nav-links a {
+            color: rgba(255, 255, 255, 0.85);
+            padding-bottom: 0.25rem;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.2s ease, color 0.2s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a:focus {
+            color: #fff;
+            border-color: var(--highlight);
+        }
+
+        .hero {
+            display: grid;
+            gap: 2.5rem;
+            grid-template-columns: repeat(12, 1fr);
+            align-items: center;
+        }
+
+        .hero-content {
+            grid-column: span 7;
+        }
+
+        .hero h1 {
+            font-family: "Merriweather", serif;
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            margin: 0 0 1rem;
+            line-height: 1.2;
+        }
+
+        .hero .subtitle {
+            font-size: 1.2rem;
+            font-weight: 300;
+            letter-spacing: 0.03em;
+            margin-bottom: 2rem;
+            max-width: 28rem;
+        }
+
+        .hero p {
+            margin-bottom: 2rem;
+            max-width: 38rem;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.9rem 1.5rem;
+            border-radius: 999px;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .btn-primary {
+            background: var(--highlight);
+            color: #1f1f1f;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-primary:hover,
+        .btn-primary:focus {
+            transform: translateY(-2px);
+            box-shadow: 0 16px 35px rgba(0, 0, 0, 0.25);
+        }
+
+        .btn-outline {
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            color: #fff;
+        }
+
+        .btn-outline:hover,
+        .btn-outline:focus {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .hero-card {
+            grid-column: span 5;
+            background: rgba(255, 255, 255, 0.12);
+            border-radius: 18px;
+            padding: 2rem;
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+        }
+
+        .hero-card h2 {
+            margin-top: 0;
+            font-size: 1.05rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .hero-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 1.5rem 0 0;
+            display: grid;
+            gap: 1rem;
+        }
+
+        .hero-card li {
+            display: grid;
+            gap: 0.25rem;
+        }
+
+        main {
+            margin-top: -3rem;
+        }
+
+        section {
+            padding: clamp(3rem, 6vw, 5rem) 0;
+        }
+
+        .section-title {
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--accent);
+            font-size: 0.95rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .section-heading {
+            font-family: "Merriweather", serif;
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            margin: 0 0 1.25rem;
+        }
+
+        .section-intro {
+            max-width: 42rem;
+            color: var(--text-secondary);
+            margin-bottom: 2.5rem;
+        }
+
+        .card-grid {
+            display: grid;
+            gap: 1.75rem;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
         }
 
@@ -415,6 +611,68 @@
         .timeline-item h3 {
             margin: 0;
             font-family: var(--font-heading);
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid var(--border);
+            box-shadow: 0 15px 35px rgba(18, 57, 91, 0.08);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .card:hover,
+        .card:focus-within {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 45px rgba(18, 57, 91, 0.12);
+        }
+
+        .card h3 {
+            margin-top: 0;
+            font-size: 1.35rem;
+        }
+
+        .card p,
+        .card ul {
+            color: var(--text-secondary);
+            margin: 0.75rem 0 0;
+        }
+
+        .card ul {
+            padding-left: 1.1rem;
+            display: grid;
+            gap: 0.5rem;
+        }
+
+        .timeline {
+            border-left: 2px solid var(--accent-light);
+            margin-left: 0.75rem;
+            padding-left: 2.5rem;
+            display: grid;
+            gap: 2.5rem;
+        }
+
+        .timeline-card {
+            position: relative;
+            background: var(--surface);
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid var(--border);
+            box-shadow: 0 12px 30px rgba(18, 57, 91, 0.08);
+        }
+
+        .timeline-card::before {
+            content: "";
+            position: absolute;
+            left: -3.1rem;
+            top: 2rem;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: var(--accent);
+            border: 3px solid #fff;
+            box-shadow: 0 0 0 4px var(--accent-light);
+        }
+
+        .timeline-card h3 {
+            margin: 0;
             font-size: 1.25rem;
         }
 
@@ -585,27 +843,6 @@
             }
         }
 
-        @media (prefers-reduced-motion: reduce) {
-            html {
-                scroll-behavior: auto;
-            }
-
-            *,
-            *::before,
-            *::after {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-            }
-
-            .reveal,
-            .reveal.is-visible {
-                opacity: 1 !important;
-                transform: none !important;
-                transition: none !important;
-            }
-        }
-
         @media print {
             body {
                 background: #fff;
@@ -660,10 +897,10 @@
                     <li><a href="#leadership">Leadership</a></li>
                     <li><a href="#education">Education</a></li>
                     <li><a href="#contact">Contact</a></li>
-                    <li><a href="assets/Alistair_Coll_CV.pdf" download aria-label="Download Alistair Coll's CV (PDF)">Download CV</a></li>
+                    <li><a href="assets/Alistair_Coll_CV.pdf" download>Download CV</a></li>
                 </ul>
             </nav>
-            <button class="theme-toggle" type="button" id="themeToggle" aria-pressed="mixed" aria-label="Toggle color scheme" title="Cycle color theme">Light / Dark</button>
+            <button class="theme-toggle" type="button" id="themeToggle" aria-pressed="false" aria-label="Toggle color scheme">Light / Dark</button>
         </div>
     </header>
 
@@ -850,6 +1087,251 @@
                         <li>Change management & stakeholder engagement</li>
                         <li>Data storytelling & executive reporting</li>
                     </ul>
+            color: var(--text-secondary);
+            margin-top: 0.35rem;
+            font-weight: 600;
+        }
+
+        .timeline-card ul {
+            margin: 1rem 0 0;
+            padding-left: 1.1rem;
+            color: var(--text-secondary);
+            display: grid;
+            gap: 0.6rem;
+        }
+
+        .two-column {
+            display: grid;
+            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        }
+
+        .skills {
+            background: var(--surface);
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid var(--border);
+            box-shadow: 0 15px 35px rgba(18, 57, 91, 0.08);
+        }
+
+        .skills h3 {
+            margin-top: 0;
+        }
+
+        .skill-tags {
+            margin-top: 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+        }
+
+        .skill-tag {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.45rem 0.95rem;
+            border-radius: 999px;
+            background: var(--accent-light);
+            color: var(--accent);
+            font-weight: 600;
+            letter-spacing: 0.04em;
+        }
+
+        .contact-section {
+            background: #0f2235;
+            color: #fff;
+            border-radius: 24px;
+            padding: clamp(2.5rem, 6vw, 4rem);
+            display: grid;
+            gap: 2.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            align-items: center;
+        }
+
+        .contact-section h2 {
+            font-family: "Merriweather", serif;
+            font-size: clamp(1.8rem, 3vw, 2.3rem);
+            margin: 0 0 1rem;
+        }
+
+        .contact-details {
+            display: grid;
+            gap: 1.25rem;
+        }
+
+        .contact-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+        }
+
+        .contact-label {
+            font-size: 0.85rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2rem 0 3rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 960px) {
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1.5rem;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-content,
+            .hero-card {
+                grid-column: auto;
+            }
+
+            .hero-card {
+                background: rgba(255, 255, 255, 0.22);
+                border: 1px solid rgba(255, 255, 255, 0.4);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .nav-links {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+
+            .hero-actions {
+                width: 100%;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .timeline {
+                margin-left: 0;
+                padding-left: 1.25rem;
+            }
+
+            .timeline-card::before {
+                left: -2.25rem;
+            }
+        }
+
+        /* Helper class to highlight areas for customization */
+        .note {
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="brand">Alistair P. Coll Corona</div>
+                <div class="nav-links">
+                    <a href="#about">About</a>
+                    <a href="#experience">Experience</a>
+                    <a href="#expertise">Expertise</a>
+                    <a href="#education">Education</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </nav>
+            <div class="hero">
+                <div class="hero-content">
+                    <h1>Strategic business leader focused on building resilient, high-performing teams.</h1>
+                    <p class="subtitle">Driving transformation through disciplined execution, data-informed decisions, and a deep commitment to client and stakeholder success.</p>
+                    <p>With experience spanning global operations, strategic partnerships, and multicultural collaboration, I guide organizations through complex change while safeguarding sustainable growth. My approach balances analytical rigor with empathy, ensuring teams have the clarity and support needed to deliver measurable impact.</p>
+                    <div class="hero-actions">
+                        <a class="btn btn-primary" href="https://www.linkedin.com/in/alistair-pablo-coll-corona-15361118b/" target="_blank" rel="noopener">Connect on LinkedIn</a>
+                        <a class="btn btn-outline" href="#contact">Schedule a Conversation</a>
+                    </div>
+                </div>
+                <aside class="hero-card">
+                    <h2>Snapshot</h2>
+                    <ul>
+                        <li>
+                            <strong>Leadership Style</strong>
+                            <span>Empowers cross-functional teams with clarity, accountability, and empathy.</span>
+                        </li>
+                        <li>
+                            <strong>Core Strength</strong>
+                            <span>Translating corporate strategy into actionable roadmaps backed by metrics.</span>
+                        </li>
+                        <li>
+                            <strong>Collaboration</strong>
+                            <span>Thrives in multicultural environments to deliver meaningful stakeholder outcomes.</span>
+                        </li>
+                    </ul>
+                </aside>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="about">
+            <div class="container">
+                <p class="section-title">Professional Summary</p>
+                <h2 class="section-heading">Anchoring strategy with disciplined execution.</h2>
+                <p class="section-intro">Throughout my career, I have led complex projects across borders, guided business units through change, and cultivated partnerships that unlock new value. I am motivated by purpose-driven work, clear communication, and creating frameworks that help teams operate with confidence.</p>
+                <div class="card-grid">
+                    <article class="card">
+                        <h3>Global Perspective</h3>
+                        <p>Experienced collaborating across Latin America, North America, and Europe—aligning regional priorities with global mandates.</p>
+                    </article>
+                    <article class="card">
+                        <h3>Operational Excellence</h3>
+                        <p>Designs processes and governance models that reduce risk, strengthen compliance, and accelerate delivery timelines.</p>
+                    </article>
+                    <article class="card">
+                        <h3>Relationship Builder</h3>
+                        <p>Trusted advisor to executives, clients, and partners; known for connecting diverse stakeholders around a common vision.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience">
+            <div class="container">
+                <p class="section-title">Professional Experience</p>
+                <h2 class="section-heading">Impact across corporate strategy and execution.</h2>
+                <p class="section-intro">Below is a structure you can tailor with your own milestones. Replace the placeholders with your role titles, employers, and quantifiable achievements.</p>
+                <div class="timeline">
+                    <article class="timeline-card">
+                        <h3>Director of Strategic Operations</h3>
+                        <p class="timeline-meta">Company Name · 2021 – Present · Location</p>
+                        <ul>
+                            <li>Lead multi-country transformation programs that streamline governance, financial controls, and service delivery.</li>
+                            <li>Partner with executive leadership to define KPIs, drive adoption of analytics dashboards, and ensure accountability.</li>
+                            <li>Mentor a high-performing team, fostering a culture of continuous improvement and transparent communication.</li>
+                        </ul>
+                    </article>
+                    <article class="timeline-card">
+                        <h3>Senior Business Development Manager</h3>
+                        <p class="timeline-meta">Company Name · 2017 – 2021 · Location</p>
+                        <ul>
+                            <li>Built strategic alliances that expanded the organization’s regional presence and diversified the client portfolio.</li>
+                            <li>Negotiated complex contracts, balancing commercial objectives with regulatory requirements.</li>
+                            <li>Championed customer success programs that increased retention and net promoter scores.</li>
+                        </ul>
+                    </article>
+                    <article class="timeline-card">
+                        <h3>International Project Lead</h3>
+                        <p class="timeline-meta">Company Name · 2013 – 2017 · Location</p>
+                        <ul>
+                            <li>Managed cross-functional initiatives, ensuring alignment between technical, financial, and operational stakeholders.</li>
+                            <li>Introduced risk assessment frameworks that reduced project overruns and strengthened compliance.</li>
+                            <li>Represented the organization at global forums, sharing best practices and fostering knowledge exchange.</li>
+                        </ul>
+                    </article>
                 </div>
             </div>
         </section>
@@ -930,6 +1412,105 @@
                     <p><strong>Email:</strong> <a href="mailto:alistaircollcorona@gmail.com">alistaircollcorona@gmail.com</a></p>
                     <p><strong>Phone:</strong> <a href="tel:+524427490704">+52 442 749 0704</a></p>
                     <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/alistair-pablo-coll-corona-15361118b/" target="_blank" rel="noreferrer">linkedin.com/in/alistair-pablo-coll-corona-15361118b</a></p>
+        <section id="expertise">
+            <div class="container">
+                <p class="section-title">Core Capabilities</p>
+                <h2 class="section-heading">Areas where I deliver measurable value.</h2>
+                <div class="two-column">
+                    <article class="card">
+                        <h3>Advisory & Leadership</h3>
+                        <ul>
+                            <li>Executive stakeholder management and board-level reporting.</li>
+                            <li>Corporate governance and strategic planning facilitation.</li>
+                            <li>Change management and culture transformation.</li>
+                            <li>Mentorship, talent development, and succession planning.</li>
+                        </ul>
+                    </article>
+                    <article class="card">
+                        <h3>Operations & Growth</h3>
+                        <ul>
+                            <li>Program and portfolio management across global teams.</li>
+                            <li>Process optimization, automation, and continuous improvement.</li>
+                            <li>Risk mitigation, compliance management, and audit readiness.</li>
+                            <li>Market analysis, partnership development, and revenue enablement.</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="education">
+            <div class="container">
+                <p class="section-title">Education & Credentials</p>
+                <h2 class="section-heading">Foundation for strategic leadership.</h2>
+                <div class="card-grid">
+                    <article class="card">
+                        <h3>Master of Business Administration</h3>
+                        <p class="note">University Name · Graduation Year · Location</p>
+                        <p>Concentrations: Strategy &amp; International Business.</p>
+                    </article>
+                    <article class="card">
+                        <h3>Bachelor of Science in [Discipline]</h3>
+                        <p class="note">University Name · Graduation Year · Location</p>
+                        <p>Activities: Student leadership, global exchange programs, community engagement.</p>
+                    </article>
+                    <article class="card">
+                        <h3>Professional Certifications</h3>
+                        <ul>
+                            <li><span class="note">Certification Name, Issuing Organization, Year</span></li>
+                            <li><span class="note">Certification Name, Issuing Organization, Year</span></li>
+                            <li><span class="note">Language proficiency or other credentials</span></li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <p class="section-title">Skills Matrix</p>
+                <h2 class="section-heading">Strengths you can rely on.</h2>
+                <div class="skills">
+                    <h3>Core Competencies</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Strategic Planning</span>
+                        <span class="skill-tag">Program Leadership</span>
+                        <span class="skill-tag">Cross-Border Collaboration</span>
+                        <span class="skill-tag">Financial Acumen</span>
+                        <span class="skill-tag">Risk Management</span>
+                        <span class="skill-tag">Process Optimization</span>
+                        <span class="skill-tag">Stakeholder Engagement</span>
+                        <span class="skill-tag">Bilingual Communication</span>
+                        <span class="skill-tag">Executive Reporting</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <div class="contact-section">
+                    <div>
+                        <h2>Let’s collaborate.</h2>
+                        <p>I welcome opportunities to support organizations that are scaling, transforming, or seeking a trusted advisor for strategic initiatives. Share a brief overview of your goals and I will respond promptly.</p>
+                    </div>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <span class="contact-label">Email</span>
+                            <span><span class="note">your.email@domain.com</span></span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-label">LinkedIn</span>
+                            <a href="https://www.linkedin.com/in/alistair-pablo-coll-corona-15361118b/" target="_blank" rel="noopener">linkedin.com/in/alistair-pablo-coll-corona-15361118b</a>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-label">Location</span>
+                            <span><span class="note">City, Country</span></span>
+                        </div>
+                    </div>
+                    <div>
+                        <a class="btn btn-primary" href="mailto:your.email@domain.com">Send a Message</a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -967,15 +1548,15 @@
             if (theme === 'dark') {
                 body.setAttribute('data-theme', 'dark');
                 themeToggle.setAttribute('aria-pressed', 'true');
-                themeToggle.textContent = 'Switch to Light Mode';
+                themeToggle.textContent = 'Dark Mode';
             } else if (theme === 'light') {
                 body.setAttribute('data-theme', 'light');
                 themeToggle.setAttribute('aria-pressed', 'false');
-                themeToggle.textContent = 'Use System Theme';
+                themeToggle.textContent = 'Light Mode';
             } else {
                 body.removeAttribute('data-theme');
-                themeToggle.setAttribute('aria-pressed', 'mixed');
-                themeToggle.textContent = 'Switch to Dark Mode';
+                themeToggle.setAttribute('aria-pressed', 'false');
+                themeToggle.textContent = 'Auto Mode';
             }
         }
 
@@ -1006,65 +1587,20 @@
 
         document.getElementById('year').textContent = new Date().getFullYear();
 
-        const revealSections = document.querySelectorAll('.reveal');
-        const supportsMotionQuery = typeof window.matchMedia === 'function';
-        const prefersReducedMotion = supportsMotionQuery ? window.matchMedia('(prefers-reduced-motion: reduce)') : null;
-        let revealObserver;
-
-        const observeSections = () => {
-            if (revealObserver) {
-                revealObserver.disconnect();
-            }
-            revealObserver = new IntersectionObserver((entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('is-visible');
-                        if (revealObserver) {
-                            revealObserver.unobserve(entry.target);
-                        }
-                    }
-                });
-            }, {
-                threshold: 0.18,
-            });
-
-            revealSections.forEach((section) => {
-                if (!section.classList.contains('is-visible')) {
-                    revealObserver.observe(section);
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
                 }
             });
-        };
+        }, {
+            threshold: 0.18,
+        });
 
-        const showAllSections = () => {
-            if (revealObserver) {
-                revealObserver.disconnect();
-                revealObserver = null;
-            }
-            revealSections.forEach((section) => section.classList.add('is-visible'));
-        };
-
-        if (prefersReducedMotion && prefersReducedMotion.matches) {
-            showAllSections();
-        } else {
-            observeSections();
-        }
-
-        const handleMotionPreference = (event) => {
-            if (event.matches) {
-                showAllSections();
-            } else {
-                revealSections.forEach((section) => section.classList.remove('is-visible'));
-                observeSections();
-            }
-        };
-
-        if (prefersReducedMotion) {
-            if (typeof prefersReducedMotion.addEventListener === 'function') {
-                prefersReducedMotion.addEventListener('change', handleMotionPreference);
-            } else if (typeof prefersReducedMotion.addListener === 'function') {
-                prefersReducedMotion.addListener(handleMotionPreference);
-            }
-        }
+        document.querySelectorAll('.reveal').forEach((section) => {
+            observer.observe(section);
+        });
 
         const form = document.getElementById('contactForm');
         const formMessage = document.getElementById('formMessage');
@@ -1092,6 +1628,18 @@
             formMessage.style.color = 'var(--accent-strong)';
             form.reset();
         });
+    <footer class="footer">
+        <div class="container">
+            &copy; <span id="year"></span> Alistair Pablo Coll Corona. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        const yearSpan = document.getElementById('year');
+        const currentYear = new Date().getFullYear();
+        if (yearSpan) {
+            yearSpan.textContent = currentYear;
+        }
     </script>
 </body>
 </html>
