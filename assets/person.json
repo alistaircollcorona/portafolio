@@ -1,0 +1,16 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Alistair Pablo Coll Corona",
+    "jobTitle": "Consultant 1",
+    "email": "mailto:alistaircollcorona@gmail.com",
+    "telephone": "+52-442-749-0704",
+    "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Mexico City",
+        "addressCountry": "MX"
+    },
+    "sameAs": [
+        "https://www.linkedin.com/in/alistair-pablo-coll-corona-15361118b/"
+    ]
+}
